@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WostiLabs - Elite Tech Solutions & Digital Innovation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>WostiLabs - Innovative Digital Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
         :root {
-            --primary: #0D0D0D;
-            --secondary: #1A1A1A;
-            --accent: #00D4FF;
-            --accent-2: #FF3366;
-            --accent-3: #7C3AED;
-            --accent-4: #10B981;
-            --gold: #FFD700;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B0B0B0;
-            --text-muted: #808080;
-            --surface: #111111;
-            --surface-alt: #1E1E1E;
-            --surface-card: #252525;
-            --border: #333333;
-            --gradient-primary: linear-gradient(135deg, #00D4FF 0%, #0099CC 50%, #0066FF 100%);
-            --gradient-secondary: linear-gradient(135deg, #FF3366 0%, #FF6B9D 50%, #C084FC 100%);
-            --gradient-tertiary: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #EC4899 100%);
-            --gradient-success: linear-gradient(135deg, #10B981 0%, #34D399 50%, #6EE7B7 100%);
-            --gradient-bg: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #0D0D0D 100%);
-            --shadow-sm: 0 2px 8px rgba(0, 212, 255, 0.1);
-            --shadow-md: 0 8px 25px rgba(0, 212, 255, 0.15);
-            --shadow-lg: 0 15px 35px rgba(0, 212, 255, 0.2);
-            --shadow-xl: 0 25px 50px rgba(0, 212, 255, 0.25);
+            --bg-primary: #FAFAFA;
+            --bg-secondary: #FFFFFF;
+            --bg-accent: #F0F4FF;
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #EC4899;
+            --secondary-dark: #DB2777;
+            --accent: #14B8A6;
+            --accent-dark: #0D9488;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --text-muted: #9CA3AF;
+            --border: #E5E7EB;
+            --border-light: #F3F4F6;
+            --gradient-primary: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+            --gradient-secondary: linear-gradient(135deg, #14B8A6 0%, #06B6D4 50%, #3B82F6 100%);
+            --gradient-warm: linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #EC4899 100%);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -40,60 +40,79 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
             color: var(--text-primary);
-            background: var(--primary);
+            background: var(--bg-primary);
             overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', 'Poppins', sans-serif;
+            font-weight: 700;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
-        /* Animated Background */
-        .bg-animation {
+        /* Decorative Background Elements */
+        .bg-decoration {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: var(--gradient-bg);
+            overflow: hidden;
+            pointer-events: none;
         }
 
-        .bg-animation::before {
+        .bg-decoration::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 51, 102, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
-            animation: bgFloat 20s ease-in-out infinite;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
         }
 
-        @keyframes bgFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(1deg); }
-            66% { transform: translateY(10px) rotate(-1deg); }
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 25s ease-in-out infinite reverse;
         }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
         /* Header */
         header {
-            background: rgba(13, 13, 13, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: 20px 0;
+            padding: 24px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         nav {
@@ -103,63 +122,78 @@
         }
 
         .logo {
-            font-size: 32px;
-            font-weight: 900;
+            font-size: 28px;
+            font-weight: 800;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -0.02em;
-            position: relative;
+            letter-spacing: -0.03em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 3px;
+        .logo i {
+            font-size: 32px;
             background: var(--gradient-primary);
-            border-radius: 2px;
-            opacity: 0.3;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 48px;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: var(--primary);
+            transform: scale(1.1);
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.3s ease;
             position: relative;
-            padding: 8px 0;
+            padding: 8px 16px;
+            border-radius: 8px;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
+            background: var(--bg-accent);
+        }
+
+        .nav-cta {
+            background: var(--gradient-primary) !important;
+            color: white !important;
+            padding: 12px 28px !important;
+            border-radius: 50px !important;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
             transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            box-shadow: var(--shadow-lg);
         }
 
         /* Hero Section */
@@ -168,57 +202,50 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: 
-                linear-gradient(135deg, rgba(13, 13, 13, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%),
-                url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2025&q=80') center/cover;
+            padding: 140px 0 100px;
+            background: linear-gradient(180deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 70%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(255, 51, 102, 0.15) 0%, transparent 50%);
-            animation: heroGlow 8s ease-in-out infinite alternate;
-        }
-
-        @keyframes heroGlow {
-            0% { opacity: 0.5; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.1); }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
+            max-width: 600px;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            padding: 12px 24px;
+            gap: 10px;
+            background: white;
+            border: 1px solid var(--border);
+            padding: 10px 20px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 32px;
-            backdrop-filter: blur(10px);
+            color: var(--primary);
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-badge i {
+            font-size: 16px;
         }
 
         .hero h1 {
-            font-size: clamp(56px, 8vw, 96px);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 32px;
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 28px;
             letter-spacing: -0.03em;
+            color: var(--text-primary);
         }
 
         .hero .highlight {
@@ -229,57 +256,119 @@
             position: relative;
         }
 
-        .hero .highlight-2 {
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .hero p {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--text-secondary);
-            margin-bottom: 48px;
-            line-height: 1.6;
-            max-width: 800px;
+            margin-bottom: 40px;
+            line-height: 1.7;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 24px;
+            gap: 16px;
             flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+        }
+
+        .hero-image i {
+            font-size: 200px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        .floating-card-1 {
+            top: 10%;
+            right: -10%;
+            animation-delay: 0s;
+        }
+
+        .floating-card-2 {
+            bottom: 15%;
+            left: -10%;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-card i {
+            font-size: 32px;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .floating-card h4 {
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .floating-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: var(--gradient-primary);
             color: white;
-            padding: 20px 40px;
+            padding: 16px 36px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 18px;
-            transition: all 0.4s ease;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
@@ -287,261 +376,95 @@
             box-shadow: var(--shadow-xl);
         }
 
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
         .btn-secondary {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: transparent;
+            gap: 10px;
+            background: white;
             color: var(--text-primary);
-            padding: 20px 40px;
+            padding: 16px 36px;
             text-decoration: none;
             border: 2px solid var(--border);
             border-radius: 50px;
             font-weight: 700;
-            font-size: 18px;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: var(--primary);
+            color: var(--primary);
             transform: translateY(-3px);
             box-shadow: var(--shadow-md);
         }
-    </style>
-</head>
-<body>
-    <div class="bg-animation"></div>
-    
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">WostiLabs</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-rocket"></i>
-                    Elite Tech Solutions Since 2016
-                </div>
-                <h1>
-                    Building <span class="highlight">Digital Empires</span><br>
-                    With <span class="highlight-2">Next-Gen</span> Technology
-                </h1>
-                <p>
-                    We don't just code, we architect digital revolutions. From AI-powered applications to blockchain solutions, 
-                    we transform ambitious visions into market-dominating realities.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Launch Your Project
-                    </a>
-                    <a href="#services" class="btn-secondary">
-                        <i class="fas fa-play"></i>
-                        Explore Solutions
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <i class="fas fa-code"></i>
-                    Our Expertise
-                </div>
-                <h2 class="section-title">Exceptional Services For <span class="highlight">Digital Domination</span></h2>
-                <p class="section-subtitle">
-                    From cutting-edge web applications to AI-powered solutions, we deliver technology that doesn't just meet expectations—it shatters them.
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon gradient-1">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Lightning-fast, responsive web applications built with React, Next.js, and cutting-edge frameworks that convert visitors into customers.</p>
-                    <div class="service-tech">
-                        <span>React</span>
-                        <span>Next.js</span>
-                        <span>Node.js</span>
-                    </div>
-                </div>
+        .btn-secondary:active {
+            transform: translateY(-1px);
+        }
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon gradient-2">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Apps</h3>
-                    <p>Native iOS and Android apps plus cross-platform solutions using React Native and Flutter for maximum market penetration.</p>
-                    <div class="service-tech">
-                        <span>React Native</span>
-                        <span>Flutter</span>
-                        <span>Swift</span>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon gradient-3">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Scalable cloud architecture on AWS, Azure, and GCP with automated deployment, monitoring, and disaster recovery systems.</p>
-                    <div class="service-tech">
-                        <span>AWS</span>
-                        <span>Docker</span>
-                        <span>Kubernetes</span>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon gradient-4">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Intelligent automation, predictive analytics, and machine learning models that give you unfair competitive advantages.</p>
-                    <div class="service-tech">
-                        <span>Python</span>
-                        <span>TensorFlow</span>
-                        <span>OpenAI</span>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon gradient-5">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Enterprise-grade security solutions with advanced threat detection, penetration testing, and compliance frameworks.</p>
-                    <div class="service-tech">
-                        <span>Security</span>
-                        <span>Penetration</span>
-                        <span>Compliance</span>
-                    </div>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-icon gradient-6">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Data-driven marketing strategies, SEO optimization, and social media campaigns that skyrocket your online presence.</p>
-                    <div class="service-tech">
-                        <span>SEO</span>
-                        <span>Analytics</span>
-                        <span>Social Media</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
         /* Services Section */
         .services {
-            padding: 140px 0;
-            background: var(--surface);
-            position: relative;
-        }
-
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-            animation: servicesGlow 12s ease-in-out infinite alternate;
-        }
-
-        @keyframes servicesGlow {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.7; }
+            padding: 120px 0;
+            background: var(--bg-primary);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 100px;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 80px;
         }
 
-        .section-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            padding: 12px 24px;
+        .section-label {
+            display: inline-block;
+            background: var(--bg-accent);
+            color: var(--primary);
+            padding: 8px 20px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 24px;
-            backdrop-filter: blur(10px);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .section-title {
-            font-size: clamp(48px, 6vw, 72px);
-            font-weight: 900;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+        .section-header h2 {
+            font-size: clamp(40px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-primary);
         }
 
-        .section-title .highlight {
+        .section-header .highlight {
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .section-subtitle {
-            font-size: 20px;
+        .section-header p {
+            font-size: 18px;
             color: var(--text-secondary);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.6;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            position: relative;
-            z-index: 2;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
         }
 
         .service-card {
-            background: var(--surface-card);
-            padding: 48px 40px;
-            border-radius: 24px;
+            background: white;
+            padding: 40px 32px;
+            border-radius: 20px;
             border: 1px solid var(--border);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
         }
 
         .service-card::before {
@@ -553,7 +476,8 @@
             height: 4px;
             background: var(--gradient-primary);
             transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover::before {
@@ -561,44 +485,40 @@
         }
 
         .service-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--accent);
+            border-color: transparent;
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+            width: 70px;
+            height: 70px;
+            background: var(--bg-accent);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
-            margin-bottom: 32px;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
         }
 
-        .gradient-1 { background: var(--gradient-primary); }
-        .gradient-2 { background: var(--gradient-secondary); }
-        .gradient-3 { background: var(--gradient-tertiary); }
-        .gradient-4 { background: var(--gradient-success); }
-        .gradient-5 { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); }
-        .gradient-6 { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); }
+        .service-card:hover .service-icon {
+            background: var(--gradient-primary);
+            transform: scale(1.1) rotate(5deg);
+        }
 
-        .service-icon::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
-            animation: iconShine 3s infinite;
+        .service-icon i {
+            font-size: 32px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon i {
+            color: white;
         }
 
         .service-card h3 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
             color: var(--text-primary);
@@ -607,278 +527,694 @@
         .service-card p {
             color: var(--text-secondary);
             line-height: 1.7;
-            font-size: 17px;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .service-features li:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-features i {
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: clamp(40px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .stat-card {
+            background: var(--bg-accent);
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-accent);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image i {
+            font-size: 150px;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 0;
+            background: var(--bg-primary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .stars i {
+            color: #F59E0B;
+            font-size: 18px;
+        }
+
+        .testimonial-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .author-info span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(40px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .contact-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--bg-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .feature-text h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: var(--bg-accent);
+            padding: 48px;
+            border-radius: 24px;
+        }
+
+        .form-group {
             margin-bottom: 24px;
         }
 
-        .service-tech {
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            padding: 80px 0 40px;
+            color: white;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+
+        .social-links {
             display: flex;
             gap: 12px;
-            flex-wrap: wrap;
         }
 
-        .service-tech span {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            border: 1px solid rgba(0, 212, 255, 0.3);
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .link-group h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .link-group a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .link-group a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+            border: none;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 32px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .floating-card-1,
+            .floating-card-2 {
+                display: none;
+            }
         }
     </style>
-    <!-- Process Section -->
-    <section id="process" class="process">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <i class="fas fa-cogs"></i>
-                    How We Work
-                </div>
-                <h2 class="section-title">Our <span class="highlight">Battle-Tested</span> Process</h2>
-                <p class="section-subtitle">
-                    From concept to launch, our proven methodology ensures every project exceeds expectations and delivers measurable results.
-                </p>
+</head>
+<body>
+    <div class="bg-decoration"></div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-cube"></i>
+                WostiLabs
             </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
 
-            <div class="process-timeline">
-                <div class="process-step" data-aos="fade-right" data-aos-delay="100">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Discovery & Strategy</h3>
-                        <p>We dive deep into your business goals, target audience, and competitive landscape to craft a winning strategy that sets you apart.</p>
-                        <div class="step-icon gradient-1">
-                            <i class="fas fa-search"></i>
-                        </div>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge" data-aos="fade-down">
+                        <i class="fas fa-sparkles"></i>
+                        Trusted by 500+ Companies
                     </div>
-                </div>
-
-                <div class="process-step" data-aos="fade-left" data-aos-delay="200">
-                    <div class="step-content">
-                        <h3>Design & Prototyping</h3>
-                        <p>Our designers create stunning, user-centric interfaces that not only look amazing but convert visitors into loyal customers.</p>
-                        <div class="step-icon gradient-2">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                    </div>
-                    <div class="step-number">02</div>
-                </div>
-
-                <div class="process-step" data-aos="fade-right" data-aos-delay="300">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Development & Integration</h3>
-                        <p>Our elite developers bring designs to life with clean, scalable code and seamless third-party integrations.</p>
-                        <div class="step-icon gradient-3">
-                            <i class="fas fa-code"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="process-step" data-aos="fade-left" data-aos-delay="400">
-                    <div class="step-content">
-                        <h3>Testing & Optimization</h3>
-                        <p>Rigorous testing across all devices and browsers ensures flawless performance and optimal user experience.</p>
-                        <div class="step-icon gradient-4">
-                            <i class="fas fa-bug"></i>
-                        </div>
-                    </div>
-                    <div class="step-number">04</div>
-                </div>
-
-                <div class="process-step" data-aos="fade-right" data-aos-delay="500">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <h3>Launch & Deployment</h3>
-                        <p>Strategic launch with performance monitoring, analytics setup, and seamless deployment to production environments.</p>
-                        <div class="step-icon gradient-5">
+                    <h1 data-aos="fade-up" data-aos-delay="100">
+                        Transform Your <span class="highlight">Digital Vision</span> Into Reality
+                    </h1>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        We craft innovative digital solutions that drive growth, enhance user experiences, and propel your business into the future.
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#contact" class="btn-primary">
                             <i class="fas fa-rocket"></i>
-                        </div>
+                            Start Your Project
+                        </a>
+                        <a href="#services" class="btn-secondary">
+                            <i class="fas fa-play-circle"></i>
+                            View Our Work
+                        </a>
                     </div>
                 </div>
-
-                <div class="process-step" data-aos="fade-left" data-aos-delay="600">
-                    <div class="step-content">
-                        <h3>Growth & Maintenance</h3>
-                        <p>Ongoing optimization, feature updates, and performance monitoring to ensure your solution continues to dominate.</p>
-                        <div class="step-icon gradient-6">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
+                
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
+                    <div class="hero-image">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <div class="step-number">06</div>
+                    <div class="floating-card floating-card-1">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>300% Growth</h4>
+                        <p>Average client increase</p>
+                    </div>
+                    <div class="floating-card floating-card-2">
+                        <i class="fas fa-users"></i>
+                        <h4>10K+ Users</h4>
+                        <p>Served worldwide</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <style>
-        /* Process Section */
-        .process {
-            padding: 140px 0;
-            background: var(--primary);
-            position: relative;
-        }
-
-        .process::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 30%, rgba(255, 51, 102, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
-            animation: processGlow 15s ease-in-out infinite alternate;
-        }
-
-        @keyframes processGlow {
-            0% { opacity: 0.4; }
-            100% { opacity: 0.8; }
-        }
-
-        .process-timeline {
-            position: relative;
-            z-index: 2;
-        }
-
-        .process-step {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            margin-bottom: 120px;
-            position: relative;
-        }
-
-        .process-step:last-child {
-            margin-bottom: 0;
-        }
-
-        .step-number {
-            font-size: 120px;
-            font-weight: 900;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            opacity: 0.3;
-        }
-
-        .step-content {
-            position: relative;
-        }
-
-        .step-content h3 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .step-content p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 32px;
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .step-icon::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
-            animation: iconShine 4s infinite;
-        }
-
-        /* Responsive Process */
-        @media (max-width: 768px) {
-            .process-step {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What We Do</span>
+                <h2>Our <span class="highlight">Services</span></h2>
+                <p>Comprehensive digital solutions tailored to your business needs</p>
+            </div>
             
-            .step-number {
-                font-size: 80px;
-            }
-        }
-    </style>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive websites built with the latest technologies for optimal performance and user experience.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> React & Next.js</li>
+                        <li><i class="fas fa-check"></i> Custom CMS</li>
+                        <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile applications that deliver seamless experiences on iOS and Android.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> iOS & Android</li>
+                        <li><i class="fas fa-check"></i> React Native</li>
+                        <li><i class="fas fa-check"></i> Flutter Development</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Solutions</h3>
+                    <p>Intelligent automation and machine learning solutions that transform your business operations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Machine Learning</li>
+                        <li><i class="fas fa-check"></i> Natural Language Processing</li>
+                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Services</h3>
+                    <p>Scalable cloud infrastructure and deployment solutions for maximum reliability and performance.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> AWS & Azure</li>
+                        <li><i class="fas fa-check"></i> DevOps & CI/CD</li>
+                        <li><i class="fas fa-check"></i> Cloud Migration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive designs that captivate users and drive engagement across all platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> User Research</li>
+                        <li><i class="fas fa-check"></i> Wireframing & Prototyping</li>
+                        <li><i class="fas fa-check"></i> Design Systems</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Data-driven marketing strategies that boost your online presence and drive measurable results.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> Content Marketing</li>
+                        <li><i class="fas fa-check"></i> Social Media</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="section-badge">
-                        <i class="fas fa-users"></i>
-                        Who We Are
-                    </div>
-                    <h2>We Are Digital <span class="highlight">Architects</span> Building Tomorrow's Solutions</h2>
-                    <p>WostiLabs isn't just another tech company. We're digital revolutionaries, innovation catalysts, and growth accelerators who transform ambitious visions into market-dominating realities.</p>
-                    <p>Our elite team of developers, designers, and strategists has one mission: to build digital solutions so powerful, they don't just meet expectations—they obliterate them.</p>
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <span class="section-label">Who We Are</span>
+                    <h2>Building <span class="highlight">Digital Excellence</span> Since 2016</h2>
+                    <p>WostiLabs is a team of passionate developers, designers, and strategists dedicated to creating exceptional digital experiences.</p>
+                    <p>We combine cutting-edge technology with creative innovation to deliver solutions that not only meet but exceed expectations.</p>
                     
                     <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-number gradient-1">500+</div>
-                            <div class="stat-label">Projects Launched</div>
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects Completed</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number gradient-2">99%</div>
-                            <div class="stat-label">Success Rate</div>
+                        <div class="stat-card">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number gradient-3">10+</div>
-                            <div class="stat-label">Years Dominating</div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number gradient-4">24/7</div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
                             <div class="stat-label">Support Available</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="about-visual">
-                    <div class="tech-stack">
-                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="100">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="200">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="300">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="400">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS</span>
-                        </div>
-                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="500">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="600">
-                            <i class="fas fa-database"></i>
-                            <span>MongoDB</span>
-                        </div>
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="about-image">
+                        <i class="fas fa-users"></i>
                     </div>
                 </div>
             </div>
@@ -888,15 +1224,10 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <i class="fas fa-star"></i>
-                    Client Success Stories
-                </div>
-                <h2 class="section-title">What Our <span class="highlight">Champions</span> Say</h2>
-                <p class="section-subtitle">
-                    Don't just take our word for it. Here's what industry leaders say about our game-changing solutions.
-                </p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Client Stories</span>
+                <h2>What Our <span class="highlight">Clients Say</span></h2>
+                <p>Don't just take our word for it - hear from our satisfied clients</p>
             </div>
 
             <div class="testimonials-grid">
@@ -909,15 +1240,15 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"WostiLabs transformed our entire digital presence. Their AI-powered solution increased our conversion rates by 340% in just 3 months. Absolutely game-changing!"</p>
+                        <p>"WostiLabs transformed our digital presence completely. Their attention to detail and commitment to excellence is unmatched. Our conversion rates increased by 250%!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar gradient-1">
+                        <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
-                            <span>CEO, TechFlow Solutions</span>
+                            <span>CEO, TechFlow Inc.</span>
                         </div>
                     </div>
                 </div>
@@ -931,15 +1262,15 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"The mobile app they built for us has over 1M downloads and 4.9 stars. Their attention to detail and user experience is unmatched in the industry."</p>
+                        <p>"The mobile app they developed for us has over 100K downloads with a 4.8-star rating. Their expertise in user experience design is truly exceptional."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar gradient-2">
+                        <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Michael Chen</h4>
-                            <span>Founder, InnovateLab</span>
+                            <span>Founder, StartupHub</span>
                         </div>
                     </div>
                 </div>
@@ -953,15 +1284,15 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Their cloud architecture saved us $200K annually while improving performance by 500%. WostiLabs doesn't just deliver—they over-deliver every single time."</p>
+                        <p>"Working with WostiLabs was a game-changer. They delivered our project on time, within budget, and exceeded all our expectations. Highly recommended!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar gradient-3">
+                        <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Emily Rodriguez</h4>
-                            <span>CTO, DataDrive Corp</span>
+                            <span>CTO, DataDrive</span>
                         </div>
                     </div>
                 </div>
@@ -969,314 +1300,81 @@
         </div>
     </section>
 
-    <style>
-        /* About Section */
-        .about {
-            padding: 140px 0;
-            background: var(--surface);
-            position: relative;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-            animation: aboutGlow 10s ease-in-out infinite alternate;
-        }
-
-        @keyframes aboutGlow {
-            0% { opacity: 0.5; }
-            100% { opacity: 0.9; }
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-text h2 {
-            font-size: clamp(48px, 6vw, 64px);
-            font-weight: 900;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .about-text p {
-            font-size: 19px;
-            margin-bottom: 28px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-top: 60px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 32px 24px;
-            background: var(--surface-card);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 12px;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .tech-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            padding: 32px 20px;
-            background: var(--surface-card);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .tech-item:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .tech-item i {
-            font-size: 32px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tech-item span {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 140px 0;
-            background: var(--primary);
-            position: relative;
-        }
-
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 20% 20%, rgba(255, 51, 102, 0.1) 0%, transparent 50%);
-            animation: testimonialsGlow 8s ease-in-out infinite alternate;
-        }
-
-        @keyframes testimonialsGlow {
-            0% { opacity: 0.6; }
-            100% { opacity: 1; }
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .testimonial-card {
-            background: var(--surface-card);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent);
-        }
-
-        .stars {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 24px;
-        }
-
-        .stars i {
-            color: #FFD700;
-            font-size: 18px;
-        }
-
-        .testimonial-content p {
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-
-        .author-info h4 {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .author-info span {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-    </style>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="section-badge">
-                        <i class="fas fa-rocket"></i>
-                        Let's Build Something Epic
-                    </div>
-                    <h2>Ready To <span class="highlight">Dominate</span> Your Market?</h2>
-                    <p>Stop dreaming about success and start building it. Tell us your vision and we'll transform it into a market-crushing reality with cutting-edge technology.</p>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-label">Get In Touch</span>
+                    <h2>Let's Build Something <span class="highlight">Amazing</span> Together</h2>
+                    <p>Ready to transform your digital presence? Get in touch with us today and let's discuss how we can help bring your vision to life.</p>
                     
                     <div class="contact-features">
                         <div class="feature-item">
-                            <div class="feature-icon gradient-1">
+                            <div class="feature-icon">
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>Lightning Fast Delivery</h4>
+                                <h4>Fast Turnaround</h4>
                                 <p>Most projects delivered in 4-8 weeks</p>
                             </div>
                         </div>
                         
                         <div class="feature-item">
-                            <div class="feature-icon gradient-2">
-                                <i class="fas fa-shield-alt"></i>
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-check"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>100% Satisfaction Guarantee</h4>
-                                <p>We don't stop until you're thrilled</p>
+                                <h4>Quality Guarantee</h4>
+                                <p>100% satisfaction or money back</p>
                             </div>
                         </div>
                         
                         <div class="feature-item">
-                            <div class="feature-icon gradient-3">
+                            <div class="feature-icon">
                                 <i class="fas fa-headset"></i>
                             </div>
-                            <div class=""                 <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
+                            <div class="feature-text">
+                                <h4>24/7 Support</h4>
+                                <p>Always here when you need us</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                            <div class="form-group">
-                                <label for="budget">Project Budget</label>
-                                <select id="budget" name="budget">
-                                    <option value="">Select Budget Range</option>
-                                    <option value="5k-15k">$5K - $15K</option>
-                                    <option value="15k-50k">$15K - $50K</option>
-                                    <option value="50k-100k">$50K - $100K</option>
-                                    <option value="100k+">$100K+</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
                         </div>
                         
                         <div class="form-group">
                             <label for="service">Service Needed</label>
                             <select id="service" name="service" required>
-                                <option value="">Select Service</option>
+                                <option value="">Select a service</option>
                                 <option value="web-development">Web Development</option>
                                 <option value="mobile-app">Mobile App</option>
-                                <option value="cloud-solutions">Cloud Solutions</option>
-                                <option value="ai-ml">AI & Machine Learning</option>
-                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="ai-solutions">AI Solutions</option>
+                                <option value="cloud-services">Cloud Services</option>
+                                <option value="ui-ux-design">UI/UX Design</option>
                                 <option value="digital-marketing">Digital Marketing</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Project Vision</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Describe your project vision, goals, and how we can help you dominate your market..."></textarea>
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn-primary submit-btn">
-                            <i class="fas fa-rocket"></i>
-                            Launch My Project Now
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
                         </button>
                     </form>
                 </div>
@@ -1289,8 +1387,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo">WostiLabs</div>
-                    <p>We don't just build digital solutions—we architect digital empires that dominate markets and transform industries.</p>
+                    <div class="logo">
+                        <i class="fas fa-cube"></i>
+                        WostiLabs
+                    </div>
+                    <p>We craft innovative digital solutions that drive growth and transform businesses.</p>
                     <div class="social-links">
                         <a href="#" class="social-link">
                             <i class="fab fa-linkedin"></i>
@@ -1307,338 +1408,102 @@
                     </div>
                 </div>
                 
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Services</h4>
-                        <a href="#services">Web Development</a>
-                        <a href="#services">Mobile Apps</a>
-                        <a href="#services">Cloud Solutions</a>
-                        <a href="#services">AI & ML</a>
-                    </div>
-                    
-                    <div class="link-group">
-                        <h4>Company</h4>
-                        <a href="#about">About Us</a>
-                        <a href="#process">Our Process</a>
-                        <a href="#testimonials">Success Stories</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    
-                    <div class="link-group">
-                        <h4>Contact Info</h4>
-                        <a href="mailto:hello@wostilabs.com">hello@wostilabs.com</a>
-                        <a href="tel:+1234567890">+1 (234) 567-890</a>
-                        <a href="#">San Francisco, CA</a>
-                    </div>
+                <div class="link-group">
+                    <h4>Services</h4>
+                    <a href="#services">Web Development</a>
+                    <a href="#services">Mobile Apps</a>
+                    <a href="#services">AI Solutions</a>
+                    <a href="#services">Cloud Services</a>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">Careers</a>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@wostilabs.com">hello@wostilabs.com</a>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    <a href="#">San Francisco, CA</a>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 WostiLabs. We don't just build websites, we build digital empires.</p>
+                <p>&copy; 2026 WostiLabs. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <style>
-        /* Contact Section */
-        .contact {
-            padding: 140px 0;
-            background: var(--surface);
-            position: relative;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(255, 51, 102, 0.1) 0%, transparent 50%);
-            animation: contactGlow 12s ease-in-out infinite alternate;
-        }
-
-        @keyframes contactGlow {
-            0% { opacity: 0.4; }
-            100% { opacity: 0.8; }
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: start;
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-info h2 {
-            font-size: clamp(48px, 6vw, 64px);
-            font-weight: 900;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .contact-info p {
-            font-size: 20px;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            line-height: 1.6;
-        }
-
-        .contact-features {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .feature-text h4 {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .feature-text p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .contact-form-wrapper {
-            background: var(--surface-card);
-            padding: 48px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 32px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 700;
-            color: var(--text-primary);
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 16px 20px;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            font-size: 16px;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            background: var(--surface);
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .submit-btn {
-            width: 100%;
-            margin-top: 16px;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary);
-            padding: 80px 0 40px;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-brand p {
-            color: var(--text-secondary);
-            margin: 24px 0 32px;
-            line-height: 1.6;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 48px;
-            height: 48px;
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--gradient-primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-        }
-
-        .link-group h4 {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 24px;
-        }
-
-        .link-group a {
-            display: block;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 12px;
-            transition: color 0.3s ease;
-        }
-
-        .link-group a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 32px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tech-stack {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-links {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-        }
-    </style>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuToggle.querySelector('i');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll to top button
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -1648,194 +1513,36 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.background = 'rgba(13, 13, 13, 0.98)';
-                header.style.boxShadow = '0 8px 32px rgba(0, 212, 255, 0.15)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
             } else {
-                header.style.background = 'rgba(13, 13, 13, 0.95)';
-                header.style.boxShadow = 'none';
+                header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
             }
         });
 
-        // Contact form handling with enhanced validation
+        // Contact form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const company = document.getElementById('company').value;
-            const budget = document.getElementById('budget').value;
             const service = document.getElementById('service').value;
             const message = document.getElementById('message').value;
             
-            // Enhanced form validation
             if (name && email && service && message) {
-                const companyText = company ? ` from ${company}` : '';
-                const budgetText = budget ? ` with a budget of ${budget}` : '';
-                
-                // Create success message
-                const successMessage = `🚀 Awesome, ${name}${companyText}! 
-                
-Your ${service} project inquiry${budgetText} has been received by our elite team. 
-
-We'll analyze your requirements and get back to you within 24 hours with a custom strategy to dominate your market.
-
-Get ready to transform your vision into reality! 💪`;
-                
-                alert(successMessage);
+                alert(`Thank you, ${name}! We've received your inquiry about ${service}. We'll get back to you at ${email} within 24 hours.`);
                 this.reset();
                 
-                // Add some visual feedback
                 const submitBtn = document.querySelector('.submit-btn');
                 const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent Successfully!';
-                submitBtn.style.background = 'var(--gradient-success)';
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
                 
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = 'var(--gradient-primary)';
                 }, 3000);
-                
-            } else {
-                alert('⚠️ Please fill in all required fields to launch your project!');
             }
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.service-card, .process-step, .testimonial-card, .stat-item, .tech-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s ease';
-            observer.observe(el);
-        });
-
-        // Add floating particles effect
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.width = '4px';
-            particle.style.height = '4px';
-            particle.style.background = 'var(--accent)';
-            particle.style.borderRadius = '50%';
-            particle.style.pointerEvents = 'none';
-            particle.style.opacity = '0.6';
-            particle.style.zIndex = '-1';
-            
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            
-            document.body.appendChild(particle);
-            
-            const animation = particle.animate([
-                { transform: 'translateY(0px)', opacity: 0.6 },
-                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
-            ], {
-                duration: Math.random() * 3000 + 2000,
-                easing: 'linear'
-            });
-            
-            animation.onfinish = () => particle.remove();
-        }
-
-        // Create particles periodically
-        setInterval(createParticle, 300);
-
-        // Add mouse move effect for hero section
-        document.addEventListener('mousemove', function(e) {
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                const rect = hero.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / centerY * 2;
-                const rotateY = (centerX - x) / centerX * 2;
-                
-                hero.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            }
-        });
-
-        // Reset hero transform when mouse leaves
-        document.addEventListener('mouseleave', function() {
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-            }
-        });
-
-        // Add typing effect to hero title
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Initialize typing effect when page loads
-        window.addEventListener('load', function() {
-            const heroTitle = document.querySelector('.hero h1');
-            if (heroTitle) {
-                const originalText = heroTitle.innerHTML;
-                setTimeout(() => {
-                    typeWriter(heroTitle, originalText.replace(/<[^>]*>/g, ''), 50);
-                }, 1000);
-            }
-        });
-
-        // Add scroll progress indicator
-        function updateScrollProgress() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            
-            let progressBar = document.querySelector('.scroll-progress');
-            if (!progressBar) {
-                progressBar = document.createElement('div');
-                progressBar.className = 'scroll-progress';
-                progressBar.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 0%;
-                    height: 4px;
-                    background: var(--gradient-primary);
-                    z-index: 9999;
-                    transition: width 0.1s ease;
-                `;
-                document.body.appendChild(progressBar);
-            }
-            
-            progressBar.style.width = scrollPercent + '%';
-        }
-
-        window.addEventListener('scroll', updateScrollProgress);
-
-        console.log('🚀 WostiLabs - Elite Tech Solutions Loaded Successfully!');
-        console.log('💻 Ready to build digital empires? Contact us now!');
+        console.log('🚀 WostiLabs - Digital Solutions Loaded Successfully!');
     </script>
 </body>
 </html>
